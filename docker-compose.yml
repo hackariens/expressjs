@@ -27,7 +27,7 @@ services:
     deploy:
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.expressjs.rule=Host(`expressjs.traefik.me`)"
+        - "traefik.http.routers.expressjs.rule=HostRegexp(`expressjs.traefik.me`, `expressjs.{ip:.*}.traefik.me`)"
         - "traefik.http.routers.expressjs-tls.tls.domains[0].main=expressjs.traefik.me"
         - "traefik.http.routers.expressjs-tls.tls.domains[0].sans=expressjs-*.traefik.me"
         - "traefik.http.services.expressjs.loadbalancer.server.port=3000"
