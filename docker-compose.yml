@@ -1,7 +1,7 @@
 
 version: "3.4"
 networks:
-  proxynetwork:
+  proxylampy:
     external: true
   net:
     driver: overlay
@@ -22,7 +22,7 @@ services:
     volumes:
       - ${PWD}/app:/app
     networks:
-      - proxynetwork
+      - proxylampy
       - net
     deploy:
       labels:
