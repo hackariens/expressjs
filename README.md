@@ -20,6 +20,14 @@ Software:
 - make
 - npm
 
+## Download
+
+```sh
+git clone git@github.com:koromerzhin/template-expressjs.git template-expressjs
+cd template-expressjs
+git submodule update --init
+```
+
 ## Install
 
 ```sh
