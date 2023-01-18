@@ -1,27 +1,27 @@
 {
-  "name": "@koromerzhin/template-expressjs",
+  "name": "@hackariens/expressjs",
   "version": "1.0.0",
   "description": "Nouveau projet sous expressjs",
   "scripts": {
-    "linter-markdown": "markdownlint",
-    "contributors": "all-contributors",
-    "readme": "readme",
-    "licenses": "license-checker",
-    "changelog": "changelog",
-    "jscpd": "jscpd app/src"
+    "docker:deploy": "korojscommands docker_deploy",
+    "docker:getpull-image": "korojscommands docker_getpull-image",
+    "docker:ls": "korojscommands docker_ls",
+    "docker:waiting": "korojscommands docker_waiting --status running --container www",
+    "exec": "npm-run-all docker:getpull-image docker:deploy docker:waiting docker:ls",
+    "lint:markdown": "markdownlint README.md"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/koromerzhin/template-expressjs.git"
+    "url": "git+https://github.com/hackariens/expressjs.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/koromerzhin/template-expressjs/issues"
+    "url": "https://github.com/hackariens/expressjs/issues"
   },
-  "homepage": "https://github.com/koromerzhin/template-expressjs#readme",
+  "homepage": "https://github.com/hackariens/expressjs#readme",
   "dependencies": {
-    "koromerzhin-dependencies": "^1.3.0"
+    "korojscommands": "^1.2.7"
   }
 }
