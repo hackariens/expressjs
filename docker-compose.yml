@@ -1,11 +1,5 @@
 
 version: "3.4"
-networks:
-  proxylampy:
-    external: true
-  net:
-    driver: overlay
-    attachable: true
 services:
   www:
     image: node:17.4.0
@@ -14,13 +8,3 @@ services:
       sh -c "npm install && npm run start"
     volumes:
       - ${PWD}/app:/app
-    networks:
-      - proxylampy
-      - net
-    deploy:
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.expressjs.rule=Host(`expressjs.traefik.me`)"
-        - "traefik.http.routers.expressjs-tls.tls.domains[0].main=expressjs.traefik.me"
-        - "traefik.http.routers.expressjs.tls=true"
-        - "traefik.http.services.expressjs.loadbalancer.server.port=3000"
