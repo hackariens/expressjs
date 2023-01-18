@@ -26,10 +26,20 @@ git clone --recurse-submodules git@github.com:hackariens/expressjs.git expressjs
 cd expressjs
 ```
 
+## Environnment
+
+Edit .env with .env.example
+
 ## Install
 
 ```sh
 npm install
+```
+
+## Launch
+
+``` sh
+npm run exec
 ```
 
 ## Author
