@@ -7,4 +7,4 @@ services:
     command: >
       sh -c "npm install && npm run start"
     volumes:
-      - ${PWD}/app:/app
+      - ${PWD}/apps:/app
