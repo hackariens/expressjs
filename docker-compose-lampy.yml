@@ -5,6 +5,12 @@ networks:
     external: true
 services:
   www:
+    image: node:17.4.0
+    working_dir: /app
+    command: >
+      sh -c "npm run start"
+    volumes:
+      - ${PWD}/apps:/app
     networks:
       - proxylampy
     deploy:

@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/hackariens/expressjs/issues"
   },
-  "homepage": "https://github.com/hackariens/expressjs#readme",
-  "dependencies": {
-    "korojscommands": "^1.2.14"
-  }
+  "homepage": "https://github.com/hackariens/expressjs#readme"
 }
