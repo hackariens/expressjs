@@ -42,6 +42,7 @@ tasks:
   help:
     desc: "Affiche l'aide détaillée"
     aliases: [ h ]
+    silent: true
     cmds:
     - task: default
 
@@ -81,11 +82,13 @@ tasks:
 
   create:apps:
     desc: "Crée une nouvelle application Express Js dans le dossier apps"
+    silent: true
     cmds:
     - docker run --rm -v $(pwd)/apps:/var/www -w /var/www node:17.4.0 npm install
 
   expressjs:exec:
     desc: "Exécute une commande dans un conteneur en cours d'exécution"
+    silent: true
     cmds:
     - task: create:apps
     - task: expressjs:getpull-image
@@ -95,6 +98,7 @@ tasks:
 
   expressjs:bash:
     desc: "Ouvre un shell bash dans le conteneur www"
+    silent: true
     cmds:
     - task: docker:stack:shell
       vars:
