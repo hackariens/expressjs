@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
 ![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/hackariens/expressjs/graphs/commit-activity)
-![Continuous Integration](https://github.com/hackariens/expressjs/workflows/ci/badge.svg?branch=develop)
+![Continuous Integration](https://github.com/hackariens/expressjs/actions/workflows/ci.yml/badge.svg?branch=develop)
 
 > Nouveau projet sous expressjs
 
@@ -17,12 +17,14 @@
 
 Software:
 
-- npm
+- [task](https://taskfile.dev/)
+- [nodejs](https://nodejs.org/)
+- [lampy](https://github.com/koromerzhin/lampy)
 
 ## Download
 
 ```sh
-git clone --recurse-submodules git@github.com:hackariens/expressjs.git expressjs
+git clone --recursive git@github.com:hackariens/expressjs.git expressjs
 cd expressjs
 ```
 
@@ -30,16 +32,16 @@ cd expressjs
 
 Edit .env with .env.example
 
-## Install
+## Create apps
 
 ```sh
-npm install
+task create:apps
 ```
 
 ## Launch
 
 ``` sh
-npm run exec
+task expressjs:exec
 ```
 
 ## Author
