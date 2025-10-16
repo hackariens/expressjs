@@ -17,7 +17,7 @@ vars:
   ENVIRONMENT: '{{.ENVIRONMENT | default "development"}}'
   STACK_NAME: '{{.STACK | default "expressjs"}}'
   FOLDERLAMPY: '{{.FOLDERLAMPY | default "lampy"}}'
-  DOCKERCOMPOSEFILE: '{{.DOCKERCOMPOSEFILE | default "docker-compose.yml"}}'
+  DOCKERCOMPOSEFILE: '{{.DOCKERCOMPOSEFILE | default "docker-compose-lampy.yml"}}'
 
 tasks:
   default:
@@ -89,7 +89,7 @@ tasks:
     desc: "Crée une nouvelle application Express Js dans le dossier apps"
     silent: true
     cmds:
-    - docker run --rm -v $(pwd)/apps:/var/www -w /var/www node:17.4.0 npm install
+    - docker run --rm -v $(pwd)/apps:/var/www -w /var/www $(awk '/www:/ {f=1} f && /image:/ {print $2; exit}' {{.DOCKERCOMPOSEFILE}}) npm install
 
   expressjs:exec:
     desc: "Exécute une commande dans un conteneur en cours d'exécution"
